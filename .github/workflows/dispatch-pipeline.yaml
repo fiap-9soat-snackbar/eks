@@ -1,4 +1,4 @@
-name: Dispatch Kubernetes Pipeline
+name: Dispatch Infra Pipeline
 
 on:
   push:
@@ -6,19 +6,13 @@ on:
       - main
 
 jobs:
-  dispatch_pipeline:
+  dispatch_infra_pipeline:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Multi Stage pipeline
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: |
-            await github.repos.createDispatchEvent({
-              owner: 'fiap-9soat-snackbar',
-              repo: 'snackbar-pipeline',
-              event_type: 'infra_commit',
-              client_payload: {
-                repo_name: 'infra'
-              }
-            });
+      - name: Trigger Infra Commit Event
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+            https://api.github.com/repos/fiap-9soat-snackbar/snackbar-pipeline/dispatches \
+            -d '{"event_type":"infra_commit","client_payload":{"repo_name":"infra"}}'
