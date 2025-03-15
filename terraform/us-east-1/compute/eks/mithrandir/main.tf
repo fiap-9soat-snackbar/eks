@@ -45,9 +45,9 @@ module "eks_mithrandir" {
   eks_managed_node_groups = {
     snackbar = {
       name                    = "ng-snackbar-app"
-      min_size                = 1
+      min_size                = 2
       max_size                = 3
-      desired_size            = 1
+      desired_size            = 2
       instance_types          = ["t3.medium"]
       #key_name                = "eks-key-pair"
       create_iam_role         = "false"
