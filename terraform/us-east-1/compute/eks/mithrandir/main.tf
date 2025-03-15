@@ -45,9 +45,9 @@ module "eks_mithrandir" {
   eks_managed_node_groups = {
     snackbar = {
       name                    = "ng-snackbar-app"
-      min_size                = 2
+      min_size                = 1
       max_size                = 3
-      desired_size            = 2
+      desired_size            = 1
       instance_types          = ["t3.medium"]
       #key_name                = "eks-key-pair"
       create_iam_role         = "false"
@@ -86,49 +86,6 @@ module "eks_mithrandir" {
         }
       }
     }
-
-    database = {
-      name                    = "ng-database"
-      min_size                = 1
-      max_size                = 3
-      desired_size            = 1
-      instance_types          = ["t3.medium"]
-      #key_name                = "eks-key-pair"
-      create_iam_role         = "false"
-      iam_role_arn            = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/LabRole" 
-      labels = {
-        application = "mongodb"
-      }
-
-      taints = {
-        dedicated = {
-          key    = "application"
-          value  = "mongodb"
-          effect = "PREFER_NO_SCHEDULE"
-        }
-      }
-
-      tags = {
-        Provisioned  = "Terraform"
-        CreatedBy    = "Team-82"
-        Product      = "SnackBar"
-      }
-
-      block_device_mappings = {
-        xvda = {
-          device_name = "/dev/xvda"
-          ebs = {
-            volume_size           = 30
-            volume_type           = "gp3"
-            iops                  = 3000
-            throughput            = 125
-            encrypted             = false
-            delete_on_termination = true
-          }
-        }
-      }
-    }
-
   } 
 }
 
