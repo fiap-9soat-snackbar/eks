@@ -10,6 +10,6 @@ maintainers:
 - email: team82@snackbar.com.br
   name: Team Grupo 82
   url: https://github.com/commskywalker/snackbar
-name: snackbar
+name: snackbar-app
 version: 1.0.0
 type: application
