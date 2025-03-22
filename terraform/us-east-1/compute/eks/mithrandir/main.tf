@@ -20,20 +20,20 @@ module "eks_mithrandir" {
     Product      = "SnackBar"
   }
   
-  cluster_addons = {
-    coredns = {
-      resolve_conflicts_on_update = "NONE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-      version                     = "v1.11.3-eksbuild.1"
-    }
-   aws-ebs-csi-driver = {
-      resolve_conflicts_on_update = "NONE"
-      resolve_conflicts_on_create = "OVERWRITE"
-      #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
-      version                     = "v1.38.1-eksbuild.1"
-    }
-  }
+  #cluster_addons = {
+  #  coredns = {
+  #    resolve_conflicts_on_update = "NONE"
+  #    resolve_conflicts_on_create = "OVERWRITE"
+  #    #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #    version                     = "v1.11.3-eksbuild.1"
+  #  }
+  # aws-ebs-csi-driver = {
+  #    resolve_conflicts_on_update = "NONE"
+  #    resolve_conflicts_on_create = "OVERWRITE"
+  #    #service_account_role_arn    = "arn:aws:iam::208016918243:role/LabRole"
+  #    version                     = "v1.41.0-eksbuild.1"
+  #  }
+  #}
 
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
