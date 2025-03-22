@@ -15,6 +15,7 @@ data "terraform_remote_state" "global" {
   backend = "s3"
   config = {
     region = "us-east-1"
+    bucket = var.bucket
     key    = "global/terraform.tfstate"
   }
 }
@@ -23,6 +24,7 @@ data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
     region = "us-east-1"
+    bucket = var.bucket
     key    = "network/vpc/terraform.tfstate"
   }
 }
