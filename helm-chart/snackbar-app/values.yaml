@@ -44,14 +44,14 @@ DEPLOYMENT:
       RAM: 500Mi
   
   LIVENESSPROBE:
-    ENABLED: true
+    ENABLED: false
     PATH: /actuator/health
     INITIALDELAY: 120
     PERIOD: 10
     FAILURETHRESHOLD: 3
 
   READINESSPROBE:
-    ENABLED: true
+    ENABLED: false
     INITIALDELAY: 30
     PERIOD: 10
     FAILURETHRESHOLD: 3
@@ -71,12 +71,10 @@ SECRET:
   DATABASE:
     MONGODB_USER: snackbaruser
     MONGODB_PASSWORD: snack01
-    MONGODB_OPTIONS: "replicaSet=rs0"
-    DB_HOST: mongodb-clusterip.ns-snackbar.svc.cluster.local
-    DB_HOST1: mongodb-0.mongodb-clusterip.ns-snackbar.svc.cluster.local
-    DB_HOST2: mongodb-1.mongodb-clusterip.ns-snackbar.svc.cluster.local
-    DB_PORT: "27017"
+    DB_HOST: snackbar-tcfase03-dev.0acxv.mongodb.net
     APP_DB: snackbar
+    DB_PORT: "27017"
+    MONGODB_OPTIONS: ""
   JWT:
     SECRET: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
     EXPIRES_IN: "3600000"

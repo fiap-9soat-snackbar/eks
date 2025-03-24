@@ -49,21 +49,12 @@ module "eks_mithrandir" {
       max_size                = 3
       desired_size            = 1
       instance_types          = ["t3.medium"]
-      #key_name                = "eks-key-pair"
       create_iam_role         = "false"
       iam_role_arn            = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/LabRole"
        
 
       labels = {
         application = "snackbar"
-      }
-
-      taints = {
-        dedicated = {
-          key    = "application"
-          value  = "snackbar"
-          effect = "NO_SCHEDULE"
-        }
       }
 
       tags = {
