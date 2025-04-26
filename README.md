@@ -1,7 +1,3 @@
-Here’s a draft in English for your documentation:
-
----
-
 # EKS Provisioning and Application Deployment
 
 This repository is used to provision an EKS cluster on AWS using Terraform and deploy an application using Helm. It is organized into several modules to separate the concerns of infrastructure provisioning and application deployment.
