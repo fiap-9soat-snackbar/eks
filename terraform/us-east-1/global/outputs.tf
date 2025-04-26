@@ -27,9 +27,9 @@ output "volume_size" {
   value = local.volume_size
 }
 
-output "mongodb_cluster_name" {
-  value = local.mongodb_cluster_name
-}
+#output "mongodb_cluster_name" {
+#  value = local.mongodb_cluster_name
+#}
 
 output "mongodb_provider_name" {
   value = local.mongodb_provider_name
