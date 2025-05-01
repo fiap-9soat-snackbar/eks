@@ -75,6 +75,9 @@ SECRET:
     APP_DB: snackbar
     DB_PORT: "27017"
     MONGODB_OPTIONS: ""
+    RDS_HOST: ""
+    RDS_PASSWORD: ""
+    RDS_DATABASE: "snackbar-payment"
   JWT:
     SECRET: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
     EXPIRES_IN: "3600000"
