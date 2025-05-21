@@ -85,16 +85,16 @@ SECRET:
   INTEGRATION:
     ORDER_SERVICE_URL: "http://snackbar-prod.prod.svc.cluster.local"
     AWS_ACCOUNT_ID: ""
-    AWS_REGION: us-east-1
+    AWS_REGION: "us-east-1"
     AWS_SQS_PRODUCT_EVENTS_QUEUE_URL: "https://sqs.us-east-1.amazonaws.com/${AWS_ACCOUNT_ID}/snackbar-management-product-events-queue"
     AWS_ENDPOINT_URL: "https://sqs.us-east-1.amazonaws.com"
     AWS_ACCESS_KEY: ""
     AWS_SECRET_KEY: ""
-    AWS_SQS_POLLING_ENABLED: true
-    AWS_SQS_POLLING_DELAY_MS: 10000
-    AWS_SQS_MAX_MESSAGES: 10
-    AWS_SQS_WAIT_TIME_SECONDS: 5
-    LOG_LEVEL_ROOT: INFO
-    LOG_LEVEL_APP: DEBUG
-    LOG_LEVEL_WEB: INFO
-    LOG_LEVEL_MONGODB: INFO
+    AWS_SQS_POLLING_ENABLED: "true"
+    AWS_SQS_POLLING_DELAY_MS: "1000"
+    AWS_SQS_MAX_MESSAGES: "10"
+    AWS_SQS_WAIT_TIME_SECONDS: "5"
+    LOG_LEVEL_ROOT: "INFO"
+    LOG_LEVEL_APP: "DEBUG"
+    LOG_LEVEL_WEB: "INFO"
+    LOG_LEVEL_MONGODB: "INFO"
